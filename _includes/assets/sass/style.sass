@@ -16,28 +16,27 @@ body
         background-color: $mapsi-lightorange
         color: $mapsi-white
 
-    font-family: 'Ubuntu', sans-serif
+        font-family: 'Ubuntu', sans-serif
 
     .custom-hero-background
         h1
             color: $mapsi-lightorange
             padding: 2rem
-    
+
     .content
         padding-bottom: 3em
 
         h1:first-child
-         background-color: $mapsi-darkblue
-         color: $mapsi-white
-         padding-bottom: 1em
-         padding-top: 1em
-    
-         
+            background-color: $mapsi-darkblue
+            color: $mapsi-white
+            padding-bottom: 1em
+            padding-top: 1em
+
     .what-we-do
 
         .what-we-do-card
             border-radius: 15px
-            
+
             .column
                 background-color: $mapsi-grey
 
@@ -58,11 +57,25 @@ body
             max-height: 100%
             width: 100%
             height: 100%
+    
+    .postlist
+        a
+            color: $mapsi-darkorange
+
+    .postlisting
+        color: $mapsi-black
+        a
+            color: $mapsi-darkorange
+
+    .postlisting:nth-child(2)
+        background-color: $mapsi-lightblue
+        color: $mapsi-white
+        a
+            color: $mapsi-lightorange
 
 .custom-hero-background
     background: url('_includes/assets/images/HomePage_bg.png')
     background-size: contain
-
 
 .has-top-rounded-corners
     border-top-left-radius: 5px
@@ -71,7 +84,4 @@ body
 .has-bottom-rounded-corners
     border-bottom-left-radius: 5px
     border-bottom-right-radius: 5px
-
-
-
 @import "../../../node_modules/bulma/bulma"
