@@ -3,30 +3,27 @@ title: About us
 date: 2017-01-01T00:00:00.000Z
 permalink: /about/index.html
 navtitle: About
-tags:
-  - nav
 ---
-Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+“Mapping Social Innovation in Dundee” is the research project based at Abertay University with a support of The Northwood Charitable Trust.
 
-Add a few line breaks in here to test:-
-Capitalize  
-on  
-low  
-hanging  
-fruit  
+We explore how to build user-driven and sustainable social innovation initiatives by identifying areas of social need and gaps that exist. The project has investigated areas not provided, or funded, via traditional public and private sources. Instead, the approach we propose places particular emphasis on working closely with various local groups to identify the existing gaps and the forms of social innovation that would benefit them. Thus, our research is divided into three overlapping phases:
 
-## Our services
+1. Qualitative mapping of needs
+2. Data mapping and results visualisation
+3. Ideas Generation and co-design
 
-Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+## What we do
+### Qualitative mapping of needs
+This phase involves a qualitative study mapping in-depth the local community’s most pressing social needs and exploring work of Dundee’s third sector organisations in meeting the unmet needs. This exercise helps bring to the fore how the city’s grassroot initiatives are mobilising socially innovative solutions, and underscores those initiatives’ further resource requirements. Support organisations like trusts and social investors are also consulted to obtain a richer picture on the resource gaps. Currently, data is being collected semi-structured interviews following an initial scoping of the field. 
 
-### Blue-sky thinking
+Researcher/Study undertaken by: Nadeen Purna
 
-Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+### Data mapping and results visualisation
+Through leveraging the use of new techniques from the emerging Data Science field there will be extensive mapping of activities across the entire local community. It will support a broad and structured overview of the local activities and needs. The creation of a website for making all the information from the mapping available to a variety of interested organisations and individuals, also comes under this phase. 
 
-#### Management frameworks
+Researcher/Study undertaken by: Akos Demuth
+    
+### Ideas Generation and co-design
+In a third phase, initial generation of ideas for Social Innovation will then be conducted. Co-design and co-creation activities will be undertaken in order to support people in designing the social innovation solutions for their needs. We will leverage our expertise in User-Canter design in this process and arrive at a proposition of a portfolio of feasible ideas. Depending on resources, this phase could lead to assessing the feasibility of the creation and trialling of apps/digital technology which address the needs identified.
 
-Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
-
-##### Regulatory convergence
-
-Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+Researcher/ Study undertaken by: Olena Saienko

@@ -2,6 +2,17 @@
 layout: layouts/base.njk
 section: page
 ---
-<h1>{{ title }}</h1>
 
-{{ layoutContent | safe }}
+<div class="content columns is-marginless is-paddingless">
+    <div class="column is-paddingless is-full">
+        <h1 class="is-size-1 has-text-centered">{{ title }}</h1>
+    </div>
+</div>
+
+<section class="section content">
+    <div class="container">
+        <div class="columns">
+            <div class="column">{{ layoutContent | safe }}</div>
+        </div>
+    </div>
+</section>

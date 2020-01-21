@@ -3,9 +3,21 @@ layout: layouts/base.njk
 section: blog
 permalink: /blog/index.html
 ---
-<h1>{{ title }}</h1>
 
-{{ layoutContent | safe }}
+<div class="content columns is-marginless is-paddingless">
+    <div class="column is-paddingless is-full">
+        <h1 class="is-size-1 has-text-centered">{{ title }}</h1>
+    </div>
+</div>
 
-{% set postslist = collections.posts %}
-{% include "components/postslist.njk" %}
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-6 has-text-left">
+                {{ layoutContent | safe }}
+                {% set postslist = collections.posts %}
+                {% include "components/postslist.njk" %}                
+            </div>
+        </div>
+    </div>
+</section>

@@ -4,28 +4,37 @@ section: post
 ---
 
 <article>
-  <h1>{{ title }}</h1>
-  <p>
-    <small>
-      <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by {{ metadata.author.name }}
-    </small>
-  </p>
+  {# Title #}
+  <div class="content columns is-marginless is-paddingless">
+      <div class="column is-paddingless is-full">
+          <h1 class="is-size-1 has-text-centered">{{ title }}</h1>
 
-  {{ layoutContent | safe }}
+      </div>
+  </div>
 
-  {% if tags %}
-    <p>
-    {% for tag in tags %}
-      {%- if tag != "post" -%}
-        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-        <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
-      {%- endif -%}
-    {% endfor %}
-    </p>
-  {% endif %}
+  <section class="section content">
+      <div class="container is-p">
+          <div class="columns is-centered">
+              <div class="column is-8 has-text-justified">
+                <p>
+                  <small>
+                    Written on <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by {{ author.name }}
+                  </small>
+                </p>
+                  {{ layoutContent | safe }}     
 
+                    {% if tags %}
+                      <p>
+                        {% for tag in tags %}
+                          {%- if tag != "post" -%}
+                            {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+                            <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+                          {%- endif -%}
+                        {% endfor %}
+                      </p>
+                    {% endif %}  
+              </div>
+          </div>
+      </div>
+  </section>
 </article>
-
-<nav>
-  <a href="{{ '/blog/' | url }}">← Blog index</a>
-</nav>

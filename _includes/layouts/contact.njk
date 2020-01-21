@@ -2,8 +2,25 @@
 layout: layouts/base.njk
 section: contact
 ---
-<h1>{{ title }}</h1>
 
-{{ layoutContent | safe }}
+<div class="content">
+    
+    <div class="columns">
+        <div class="column is-full is-marginless">
+            <h1 class="is-size-1 has-text-centered">{{ title }}</h1>
+        </div>
+    </div>
+    
+    <div class="container">
+    <div class="content">
 
-{% include "components/form.njk" %}
+        <div class="columns">
+            <div class="column has-text-justified">{{ layoutContent | safe }}</div>
+            <div class="column">
+                {% include "components/form.njk" %}
+            </div>
+        </div>
+        
+        </div>
+    </div>
+</div>
