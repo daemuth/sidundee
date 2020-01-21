@@ -23,13 +23,16 @@
   "homepage": "https://github.com/danurbanowicz/eleventy-netlify-boilerplate",
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "luxon": "^1.19.2",
     "markdown-it": "^10.0.0",
     "markdown-it-anchor": "^5.2.4"
   },
   "dependencies": {
+    "bulma": "^0.8.0",
     "clean-css": "^4.2.1",
     "html-minifier": "^4.0.0",
+    "node-sass": "^4.13.1",
     "uglify-es": "^3.3.9"
   }
 }
