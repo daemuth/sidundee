@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Special+Elite&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
 .has-background-mapsi-grey {
   background: #f1f2f5; }
@@ -48,41 +49,6 @@ pre .number {
   vertical-align: inherit;
   margin-right: inherit; }
 
-body .navbar-item {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem; }
-  body .navbar-item:hover {
-    background-color: #202742 !important;
-    color: #fefefe !important; }
-  body .navbar-item.active-page {
-    background-color: #f1f2f5;
-    color: #2C365B; }
-
-body .has-no-bottom-padding {
-  padding-bottom: 0rem !important; }
-
-body .has-mapsi-padding-small {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem; }
-  @media (max-width: 769px) {
-    body .has-mapsi-padding-small {
-      padding-bottom: 0.5rem; } }
-
-body .has-mapsi-padding {
-  padding-top: 5rem;
-  padding-bottom: 5rem; }
-  @media (max-width: 769px) {
-    body .has-mapsi-padding {
-      padding-bottom: 1rem; } }
-  body .has-mapsi-padding h2 {
-    font-weight: medium; }
-
-body .hero.is-medium .hero-body {
-  padding-bottom: 12.5rem;
-  padding-top: 12.5rem; }
-  body .hero.is-medium .hero-body h2 {
-    font-size: 1.25rem; }
-
 body h1 {
   font-family: 'Ubuntu', sans-serif; }
 
@@ -95,23 +61,9 @@ body p::selection, body li::selection {
   color: #fefefe;
   font-family: 'Ubuntu', sans-serif; }
 
-body .custom-hero-background {
-  background: url("_includes/assets/images/HomePage_bg.png");
-  background-size: cover;
-  background-position: bottom;
-  padding-bottom: 5rem; }
-  @media (max-width: 1024px) {
-    body .custom-hero-background {
-      background-size: cover; } }
-  body .custom-hero-background h1 {
-    color: #ff6b26;
-    padding: 2rem; }
-    @media (max-width: 769px) {
-      body .custom-hero-background h1 {
-        font-size: 2rem !important; } }
-  @media (max-width: 769px) {
-    body .custom-hero-background h2 {
-      font-size: 1rem !important; } }
+body .custom-hero-background h1 {
+  color: #ff6b26;
+  padding: 2rem; }
 
 body .content {
   padding-bottom: 3em; }
@@ -122,17 +74,13 @@ body .content {
     padding-top: 1em; }
 
 body .what-we-do .what-we-do-card {
-  padding: 3rem;
   border-radius: 15px; }
   body .what-we-do .what-we-do-card .column {
     background-color: #f1f2f5; }
   body .what-we-do .what-we-do-card h3 {
-    font-weight: medium;
-    padding-bottom: 0.75rem; }
+    font-weight: medium; }
   body .what-we-do .what-we-do-card img {
-    max-height: 150px;
-    padding: 12px;
-    margin-top: 6px; }
+    max-height: 170px; }
 
 body .insights {
   text-transform: uppercase;
@@ -158,16 +106,9 @@ body .postlisting:nth-child(2) {
   body .postlisting:nth-child(2) a {
     color: #ff6b26; }
 
-body .button.mapsi {
-  background-color: #202742;
-  color: #fefefe;
-  border-radius: 10px;
-  font-size: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  text-transform: uppercase; }
-  body .button.mapsi:hover {
-    background-color: #394677; }
+.custom-hero-background {
+  background: url("_includes/assets/images/HomePage_bg.png");
+  background-size: contain; }
 
 .has-top-rounded-corners {
   border-top-left-radius: 5px;
@@ -464,7 +405,7 @@ button,
 input,
 select,
 textarea {
-  font-family: "Ubuntu", sans-serif; }
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 
 code,
 pre {
@@ -1007,7 +948,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   font-weight: 700 !important; }
 
 .is-family-primary {
-  font-family: "Ubuntu", sans-serif !important; }
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important; }
 
 .is-family-secondary {
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important; }

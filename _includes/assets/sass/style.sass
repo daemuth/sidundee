@@ -1,12 +1,53 @@
 @charset "utf-8"
-@import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap')
 
 @import "../../../node_modules/bulma/sass/utilities/initial-variables"
-
 @import 'mapsi-colours'
 @import 'bulma_overrides'
 
 body
+    .navbar-item
+        padding-left: 1.5rem
+        padding-right: 1.5rem
+
+        &:hover
+            background-color: $mapsi-darkblue !important
+            color: $mapsi-white !important
+        
+        &.active-page
+            background-color: $mapsi-grey
+            color: $mapsi-blue
+
+    .has-no-bottom-padding
+        padding-bottom: 0rem !important
+
+    .has-mapsi-padding-small
+        padding-top: 2.5rem
+        padding-bottom: 2.5rem
+
+        @media (max-width: $tablet)
+            padding-bottom: 0.5rem
+
+    .has-mapsi-padding
+        padding-top: 5rem
+        padding-bottom: 5rem
+
+        @media (max-width: $tablet)
+            padding-bottom: 1rem
+
+        h2
+            font-weight: medium
+
+    .hero.is-medium
+        .hero-body
+            padding-bottom: 12.5rem
+            padding-top: 12.5rem
+        
+            h2
+                font-size: $size-5
+
+    h1
+        font-family: 'Ubuntu', sans-serif
 
     h1::selection
         background-color: $mapsi-lightblue
@@ -19,9 +60,25 @@ body
         font-family: 'Ubuntu', sans-serif
 
     .custom-hero-background
+        background: url('_includes/assets/images/HomePage_bg.png')
+        background-size: cover
+        background-position: bottom
+        padding-bottom: 5rem
+        
+        @media (max-width: $desktop)
+            background-size: cover
+        
         h1
             color: $mapsi-lightorange
             padding: 2rem
+            
+            @media (max-width: $tablet)
+                font-size: 2rem !important
+        h2
+            @media (max-width: $tablet)
+                font-size: 1rem !important
+                
+
 
     .content
         padding-bottom: 3em
@@ -35,6 +92,7 @@ body
     .what-we-do
 
         .what-we-do-card
+            padding: 3rem
             border-radius: 15px
 
             .column
@@ -42,8 +100,11 @@ body
 
             h3
                 font-weight: medium
+                padding-bottom: 0.75rem
             img
-                max-height: 170px
+                max-height: 150px
+                padding: 12px
+                margin-top: 6px
 
     .insights
         text-transform: uppercase
@@ -71,9 +132,20 @@ body
         a
             color: $mapsi-lightorange
 
-.custom-hero-background
-    background: url('_includes/assets/images/HomePage_bg.png')
-    background-size: contain
+    
+    .button.mapsi
+        background-color: $mapsi-darkblue
+        color: $mapsi-white
+        border-radius: 10px
+        font-size: $size-6
+        padding-left: 2rem
+        padding-right: 2rem
+        text-transform: uppercase
+
+        &:hover
+            background-color: $mapsi-lightblue 
+        
+        
 
 .has-top-rounded-corners
     border-top-left-radius: 5px
