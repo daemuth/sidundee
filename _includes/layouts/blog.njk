@@ -1,26 +1,25 @@
----
-layout: layouts/base.njk
-section: blog
-permalink: /blog/index.html
----
 
-<div class="content columns is-marginless is-paddingless">
-    <div class="column is-paddingless is-full">
-        <h1 class="is-size-1 has-text-centered">{{ title }}</h1>
-    </div>
-</div>
+{% extends 'layouts/base.njk' %}
+{% import "../components/macros/macros.njk" as macros %}
 
-<section class="section">
-    <div class="container">
+{% block content %}    
 
+    {{ macros.page_title(title) }}
 
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered" >
 
-            <div class="columns is-mobile is-centered" >
-                <div class="column is-half-desktop is-full-mobile">
-                    {% set postslist = collections.posts %}            
-                    {% include "components/postslist.njk" %}  
-                    {{ layoutContent | safe }}                                 
-                </div>
+                {% if collection == "dundee" %}
+                    {% set postslist = collections.dundee %}
+                {% elif collection == "resource" %} 
+                    {% set postslist = collections.resources %}                       
+                {% endif %}
+
+                {% include "components/postslist.njk" %}         
+                                   
             </div>
-    </div>
-</section>
+        </div>
+    </section>
+
+{% endblock %}

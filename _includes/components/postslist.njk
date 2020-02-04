@@ -1,65 +1,10 @@
+
+{% import "../components/macros/macros.njk" as macros %}
+
 {% for post in postslist | reverse %}
-	<div class="postlisting columns has-text-mapsi-white">	
-
-			{# Post image #}
-			<div class="column is-4">
-				<a href="{{ post.url | url }}">
-					<figure class="image">
-						{# TODO: Replace placeholder image #}
-						<img src="https://bulma.io/images/placeholders/128x128.png">
-					</figure>
-				</a>
-			</div>
-
-			{# Post details #}
-			<div class="column is-8">
-				<div class="columns is-paddingless is-marginless is-multiline">
-					<div class="column is-full has-text-mapsi-darkblue">
-						<h3 class="is-size-4 is-uppercase has-text-mapsi-darkblue">
-							<a href="{{ post.url | url }}">
-								{% if post.data.title %}
-									{{ post.data.title }}
-								{% else %}
-												Untitled
-								{% endif %}
-							</a>
-						</h3>
-					</div>
-				</div>
-				
-					{# Post summary #}
-					{% if post.data.summary %}
-					<div class="column is-full">
-						<p class="post-summary">
-							{{ post.data.summary }}
-						</p>
-					</div>
-					{% endif %}
-				
-					{# Post date #}
-					<div class="column is-full">
-					<p>
-						<time datetime="{{ post.date | machineDate }}">
-							<small>{{ post.date | readableDate }} by {{ post.data.author.name }}</small>
-						</time>
-					</p>
-					</div>
-				</div>
-			</div>
-	{% endfor %}
-	
-	 {# <article class="media" {% if post.url == url %} data-current="current item" {% endif %}>
-			
-		
-
-		{% if post.data.tags %}
-			<p>
-				{% for tag in post.data.tags %}
-				{%- if tag != "post" -%}
-					{% set tagUrl %}/tags/{{ tag }}/{% endset %}
-				<a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
-				{%- endif -%}
-				{% endfor %}
-			</p>
-		{% endif %} 
-	</article>#}
+	{{ macros.blog_card(
+			post.data.title,
+			post.url, 
+			'/static/img/placeholder/data_idea.jpg') 
+	}}
+{% endfor %}

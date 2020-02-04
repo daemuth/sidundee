@@ -1,7 +1,8 @@
----
-layout: layouts/base.njk
-section: home
----
+{% extends 'layouts/base.njk' %}
+
+{% import "../components/macros/macros.njk" as macros %}
+
+{% block content %}
 
 {# Hero image #}
 
@@ -108,7 +109,6 @@ section: home
 </section>
 
 {# DUNDEE PICTURE #}
-
 <section class="section dundee-picture">
   <div class="container">
 
@@ -121,39 +121,12 @@ section: home
 
     <div class="columns has-text-centered">
 
-      <div class="column is-narrow what-we-do-card is-one-third-desktop is-full-mobile">
-        <div class="columnsis-paddingless is-marginless is-multiline">
-          <div class="column is-flex is-paddingless is-marginless is-full has-top-rounded-corners">
-            <img class="has-top-rounded-corners" src="/static/img/placeholder/data_idea.jpg"></img>
-          </div>
-          <div class="column is-full has-bottom-rounded-corners has-background-mapsi-darkblue has-text-mapsi-white">
-            <h3>Qualitative Mapping of Needs</h3>
-          </div>
-        </div>
-      </div>
+      {{ macros.blog_card('Quality Mapping of Needs', '#', '/static/img/placeholder/data_idea.jpg') }}
+      {{ macros.blog_card('Data mapping and result visualisation', '#', '/static/img/placeholder/data_idea.jpg') }}
+      {{ macros.blog_card('Ideas generation and co-design', '#', '/static/img/placeholder/data_idea.jpg') }}
 
-      <div class="column is-narrow what-we-do-card is-one-third-desktop is-full-mobile">
-        <div class="columns is-paddingless is-marginless is-multiline">
-          <div class="column is-flex is-paddingless is-marginless is-full has-top-rounded-corners">
-            <img class="has-top-rounded-corners" src="/static/img/placeholder/data_idea.jpg"></img>
-          </div>
-          <div class="column is-full has-bottom-rounded-corners has-background-mapsi-darkblue has-text-mapsi-white">
-            <h3>Data Mapping and result visualisation</h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="column is-narrow what-we-do-card is-one-third-desktop is-full-mobile">
-        <div class="columns is-paddingless is-marginless is-multiline">
-          <div class="column is-flex emptyimagecontainer is-paddingless is-full has-top-rounded-corners">
-            <img class="has-top-rounded-corners" src="/static/img/placeholder/data_idea.jpg"></img>
-          </div>
-          <div class="column is-full has-bottom-rounded-corners has-background-mapsi-darkblue has-text-mapsi-white">
-            <h3>Ideas generation and co-design</h3>
-          </div>
-        </div>
-      </div>
     </div>
+
 
     <div class="columns has-mapsi-padding is-8 has-text-centered">
       <div class="column">
@@ -172,3 +145,5 @@ section: home
     </div>
 
   </section>
+
+{% endblock %}

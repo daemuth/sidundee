@@ -1,7 +1,8 @@
----
-layout: layouts/base.njk
-section: page
----
+{% extends 'layouts/base.njk' %}
+
+{% import "../components/macros/macros.njk" as macros %}
+
+{% block content %}    
 <div class="content columns is-marginless is-paddingless">
     <div class="column is-paddingless is-full">
         <h1 class="is-size-1 has-text-centered">{{ title }}</h1>
@@ -90,3 +91,4 @@ section: page
 
     </div>
 </section>
+{% endblock %}    

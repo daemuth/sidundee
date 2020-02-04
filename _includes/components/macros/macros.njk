@@ -1,0 +1,22 @@
+{% macro blog_card(title, url, image) %}
+    <div class="column is-narrow what-we-do-card is-one-third-desktop is-full-mobile">
+        <a href="{{url}}">
+            <div class="columnsis-paddingless is-marginless is-multiline">
+                <div class="column is-flex is-paddingless is-marginless is-full has-top-rounded-corners">
+                    <img class="has-top-rounded-corners" src="{{ image }}"></img>
+                    </div>
+                    <div class="column is-full has-bottom-rounded-corners has-background-mapsi-darkblue has-text-mapsi-white">
+                <h3>{{ title }}</h3>
+            </div>
+        </div>
+        </a>
+    </div>
+{% endmacro %}
+
+{% macro page_title(title) %}
+    <div class="content columns is-marginless is-paddingless">
+        <div class="column is-paddingless is-full">
+            <h1 class="is-size-1 has-text-centered">{{ title }}</h1>
+        </div>
+    </div>
+{% endmacro %}
