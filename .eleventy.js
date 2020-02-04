@@ -58,6 +58,14 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  eleventyConfig.addCollection("resources", function(collection) {
+      return collection.getFilteredByTag("resource");
+  });
+
+  eleventyConfig.addCollection("dundee", function(collection) {
+    return collection.getFilteredByTag("dundee");
+});
+
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy("static/img");
   eleventyConfig.addPassthroughCopy("admin");
