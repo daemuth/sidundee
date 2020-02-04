@@ -1,9 +1,10 @@
 ---
 layout: layouts/blog.njk
-title: Blog
+collection: dundee
+title: Dundee picture
 tags:
   - nav
-navtitle: Blog
+navtitle: Dundee picture
 date: 2017-01-01
 permalink: /blog/index.html
 ---
