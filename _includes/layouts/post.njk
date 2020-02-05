@@ -1,8 +1,8 @@
----
-layout: layouts/base.njk
-section: post
----
 
+{% extends 'layouts/base.njk' %}
+{% import "../components/macros/macros.njk" as macros %}
+
+{% block content %}    
 <article>
   {# Title #}
   <div class="content columns is-marginless is-paddingless">
@@ -38,3 +38,5 @@ section: post
       </div>
   </section>
 </article>
+
+{% endblock %}

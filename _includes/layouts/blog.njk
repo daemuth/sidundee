@@ -8,12 +8,14 @@
 
     <section class="section">
         <div class="container">
-            <div class="columns is-centered" >
+            <div class="columns is-multiline" >
 
                 {% if collection == "dundee" %}
                     {% set postslist = collections.dundee %}
                 {% elif collection == "resource" %} 
-                    {% set postslist = collections.resources %}                       
+                    {% set postslist = collections.resources %}    
+                {% else %}
+                    {% set postslist = collections.posts %}                   
                 {% endif %}
 
                 {% include "components/postslist.njk" %}         
