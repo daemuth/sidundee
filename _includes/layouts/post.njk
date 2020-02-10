@@ -8,31 +8,39 @@
   <div class="content columns is-marginless is-paddingless">
       <div class="column is-paddingless is-full">
           <h1 class="is-size-1 has-text-centered">{{ title }}</h1>
-
       </div>
   </div>
 
+  <section class="section">
+  <div class="container">
+    <figure class="image"><img src="{{ image }}" alt=""></figure>
+  </div>
+
   <section class="section content">
-      <div class="container is-p">
-          <div class="columns is-centered">
-              <div class="column is-8 has-text-justified">
+      <div class="container">
+          <div class="columns">
+              <div class="column is-full-mobile is-3 post-details">
                 <p>
-                  <small>
-                    Written on <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by {{ author.name }}
-                  </small>
+                  <span class="author">Author: <b>{{ author.name }}</b></span>
                 </p>
+                <p>
+                  <span class="posted">Posted: <b><time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time></b></span>
+                </p>
+                <p>
+                {% if tags %}
+                <p class="tags">                
+                    {% for tag in tags %}
+                      {%- if tag != "post" -%}                        
+                        <span class="tag">{{ tag }}</span>
+                      {%- endif -%}
+                    {% endfor %}               
+                </p>
+                {% endif %}
+              </div>            
+              <div class="column is-full-mobile is-7 has-text-justified is-centered">
                   {{ layoutContent | safe }}     
 
-                    {% if tags %}
-                      {# <p>
-                        {% for tag in tags %}
-                          {%- if tag != "post" -%}
-                            {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-                            <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
-                          {%- endif -%}
-                        {% endfor %}
-                      </p> #}
-                    {% endif %}  
+ 
               </div>
           </div>
       </div>

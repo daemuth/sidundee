@@ -1,10 +1,11 @@
 ---
 title: This is my third post title
 summary: Why contemplating our mortality can be a powerful catalyst for change
+image: https://images.unsplash.com/photo-1495639867387-5423d6811583
 date: 2015-01-01
 tags:
   - post
-  - resource
+  - Resource
 author:
   name: Akos Demuth
 ---
