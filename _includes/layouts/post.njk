@@ -3,19 +3,15 @@
 {% import "../components/macros/macros.njk" as macros %}
 
 {% block content %}    
+
 <article>
   {# Title #}
-  <div class="content columns is-marginless is-paddingless">
-      <div class="column is-paddingless is-full">
-          <h1 class="is-size-1 has-text-centered">{{ title }}</h1>
+  <div class="content columns is-marginless is-paddingless no-margin-bottom">
+      <div class="column is-paddingless is-full no-margin-bottom">
+          <h1 class="is-size-1 has-text-centered no-margin-bottom">{{ title }}</h1>
       </div>
   </div>
-
-  <section class="section">
-  <div class="container">
-    <figure class="image"><img src="{{ image }}" alt=""></figure>
-  </div>
-
+  <figure class="image"><img src="{{ image }}" alt=""></figure>
   <section class="section content">
       <div class="container">
           <div class="columns">
@@ -38,7 +34,7 @@
                 {% endif %}
               </div>            
               <div class="column is-full-mobile is-7 has-text-justified is-centered">
-                  {{ layoutContent | safe }}     
+                  {{ layoutContent | safe }}
 
  
               </div>
