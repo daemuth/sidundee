@@ -5,7 +5,10 @@
   "scripts": {
     "build": "npx eleventy",
     "watch": "npx eleventy --watch",
-    "debug": "DEBUG=* npx eleventy"
+    "debug": "DEBUG=* npx eleventy",
+    "css-build": "yarn node-sass ./_includes/assets/sass/style.sass ./_includes/assets/css/bulma.css",
+    "css-watch": "yarn run css-build --watch"
+
   },
   "repository": {
     "type": "git",
