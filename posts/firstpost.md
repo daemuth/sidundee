@@ -1,5 +1,5 @@
 ---
-title: Social Innovaiton in Dundee
+title: Social Innovation in Dundee
 date: 2020-02-12
 image: https://images.unsplash.com/photo-1512758017271-d7b84c2113f1
 tags:
