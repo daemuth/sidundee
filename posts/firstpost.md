@@ -6,11 +6,11 @@ tags:
   - post
   - social innovation
 author:
-  name: Dr. Stefano De Paoli
+  name: Project Team
 ---
 
 ## What is social innovation?
-Social innovation is a distributed and bottom-up innovation process which offers novel answers to social needs. Social innovation **impact** is connected with improving the quality of living of the people and the possibility for them to satisfy needs which do not find solutions from institutionalised channels. Social Innovation is activated by understanding and closely observing people&#39;s lives while involving and empowering them. By thinking creatively and pursuing simple, sustainable solutions, the quality of life of individuals and communities can be improved.
+Social innovation is a distributed and bottom-up innovation process which offers novel answers to social needs. Social innovation **impact** is connected with improving the quality of life of people and the possibility for them to satisfy needs which do not find solutions from institutionalised channels. Social Innovation is activated by understanding and closely observing people&#39;s lives while involving and empowering them. By thinking creatively and pursuing simple, sustainable solutions, the quality of life of individuals and communities can be improved.
 
 
 ## About the project
@@ -20,7 +20,7 @@ We are now opening the website [sidundee.study](https://sidundee.study/) as the 
 
 Social Innovation is of course something which is not entirely new to the city. There have been a number of interesting and relevant examples which have also featured in the news quite recently. Among others we can mention the  [Dundee Community Fridge](http://www.gatechurch.co.uk/communityfridge) or the  [green health prescription](https://www.volunteerdundee.org.uk/our-work/green-health-prescription/). The potential is there for Dundee to become a hub for more social innovation, also taking advantage of recent developments including the V&A and more established dynamics such Digital Games.
 
-The approach we propose places particular emphasis on working closely with various local groups to identify the existing gaps and the forms of social innovation that would benefit them. Theproject, in particular, places strong emphasis on the mapping of the local situation and this will have an impact well beyond the scope of the project itself and has added value for the activities of a range of organisations involved in the delivery and support of social need (such as Charitable bodies). While the present project will not conduct all the phases of an entire Social Innovation cycle, it will cover the initial core steps, which will include: the mapping and a phase of ideas generation with the development of co-design and co-creation activities.
+The approach we propose places particular emphasis on working closely with various local groups to identify the existing gaps and the forms of social innovation that would benefit them. The project, in particular, places strong emphasis on the mapping of the local situation and this will have an impact well beyond the scope of the project itself and has added value for the activities of a range of organisations involved in the delivery and support of social need (such as Charitable bodies). While the present project will not conduct all the phases of an entire Social Innovation cycle, it will cover the initial core steps, which will include: the mapping and a phase of ideas generation with the development of co-design and co-creation activities.
 
 The 3 strands of the project include:
 
