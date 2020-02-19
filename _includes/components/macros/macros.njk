@@ -1,7 +1,7 @@
 {% macro blog_card(title, url, image) %}
     <div class="column is-narrow what-we-do-card is-one-third-desktop is-full-mobile">
         <a href="{{url}}">
-            <div class="columnsis-paddingless is-marginless is-multiline">
+            <div class="columns is-paddingless is-marginless is-multiline">
                 <div class="column is-flex is-paddingless is-marginless is-full has-top-rounded-corners">
                     <img class="has-top-rounded-corners" src="{{ image }}"></img>
                     </div>
@@ -10,6 +10,26 @@
             </div>
         </div>
         </a>
+    </div>
+{% endmacro %}
+
+{% macro about_us_card(name, title, url, image) %}
+    <div class="column is-centered is-one-third-desktop is-full-mobile ">
+        {% if url != "#" %}
+        <a href="{{url}}">
+        {% endif %}
+            <div class="about-us-card columns is-mobile is-centered is-multiline">
+                <div class="column is-full-desktop is-flex is-paddingless is-centered is-marginless is-full has-top-rounded-corners">
+                    <img class="has-top-rounded-corners" src="{{ image }}">
+                    </div>
+                    <div class="column is-full has-bottom-rounded-corners has-background-mapsi-darkblue has-text-mapsi-white">
+                <p class="has-text-centered is-uppercase has-text-weight-medium">{{ name }}<p>
+                <p class="has-text-centered">{{ title }}</p>
+            </div>
+        </div>
+        {% if url != "#" %}
+        </a>
+        {% endif %}
     </div>
 {% endmacro %}
 

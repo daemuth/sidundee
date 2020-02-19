@@ -8,6 +8,8 @@ tags:
   - Resource
 author:
   name: Akos Demuth
+image_style: inline
+info_panel: side
 ---
 
 ## This is an example second level heading
