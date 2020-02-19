@@ -13,14 +13,14 @@
     </div>
 {% endmacro %}
 
-{% macro about_us_card(name, title, url, image) %}
+{% macro about_us_card(name, title, url, image, id) %}
     <div class="column is-centered is-one-third-desktop is-full-mobile ">
         {% if url != "#" %}
         <a href="{{url}}">
         {% endif %}
             <div class="about-us-card columns is-mobile is-centered is-multiline">
                 <div class="column is-full-desktop is-flex is-paddingless is-centered is-marginless is-full has-top-rounded-corners">
-                    <img class="has-top-rounded-corners" src="{{ image }}">
+                    <img {% if id %} id="{{id}}" {% endif %} class="has-top-rounded-corners" src="{{ image }}">
                     </div>
                     <div class="column is-full has-bottom-rounded-corners has-background-mapsi-darkblue has-text-mapsi-white">
                 <p class="has-text-centered is-uppercase has-text-weight-medium">{{ name }}<p>

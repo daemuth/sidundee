@@ -107,7 +107,8 @@
                     "Iain Donald",
                     "Senior lecturer",
                     "#", 
-                    "/static/img/photos/Photos358x305/Iain.png") 
+                    "/static/img/photos/Photos358x305/Iain.png",
+                    "iain") 
             }}
             {{ macros.about_us_card(
                     "Jan Law",
@@ -137,4 +138,15 @@
     </div>
     </div>
 </section>
+
+<script type="text/javascript">
+var easter_egg = new Konami(function()
+{ 
+    var iain_img = document.getElementById("iain");
+    iain_img.src="/static/img/photos/Photos358x305/iain_2.png";
+    iain_img.style.width = "100%";
+    iain_img.style.heigth = "305px";
+
+});
+</script>
 {% endblock %}    
