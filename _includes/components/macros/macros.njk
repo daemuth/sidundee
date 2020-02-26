@@ -40,3 +40,32 @@
         </div>
     </div>
 {% endmacro %}
+
+{% macro about_us_section(id, odd, title, image_url, content) %}
+<section id="{{ id if id else '' }}" class="section {{ 'has-background-mapsi-white' if odd else 'has-background-mapsi-grey' }}">
+    <div class="container content">
+        <h2 class="has-text-centered is-size-4 is-uppercase">{{title}}</h2> 
+        <div class="columns is-centered is-vcentered">
+        {%if odd %}            
+            <div class="column is-offset-1 is-vcentered">
+                {{ content | safe  }}
+            </div>            
+            <div class="column is-offset-1">
+                <figure class="image is-256x256">
+                    <img class="image" src="{{image_url}}" alt="" srcset="">
+                </figure>
+            </div>
+        {% else %}
+            <div class="column is-offset-1">
+                <figure class="image is-256x256">
+                    <img class="image" src="{{image_url}}" alt="" srcset="">
+                </figure>
+            </div>        
+            <div class="column is-offset-1 is-vcentered">
+                {{ content | escape }}
+            </div>
+        {% endif %}
+        </div>
+    </div>
+</section>
+{% endmacro %}

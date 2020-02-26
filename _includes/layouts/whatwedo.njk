@@ -8,10 +8,19 @@
         <h1 class="is-size-1 has-text-centered">{{ title }}</h1>
     </div>
 </div>
+
+{% for section in sections %}
+    {{ macros.about_us_section( section.id, section.is_left, section.title, section.image, section.content) }}
+{% endfor %}
+
+{# {{ macros.about_us_section("testID", true, "Title", "/static/img/What_we_do.png", "content") }} #}
+{# {{ macros.about_us_section("testID", false, "Title", "/static/img/What_we_do.png", "content") }} #}
+
 <section class="section has-background-mapsi-white">
     <div class="container content">
         <h2 class="has-text-centered is-size-4 is-uppercase">The project</h2>
         <div class="columns is-centered is-vcentered">
+        
         <div class="column is-offset-1 is-vcentered">
             <p>Mapping for Social Innovation in Dundee is the research project based at Abertay University with support of The Northwood Charitable Trust.</p>
             <p>We  explore how to build user-driven and sustainable social innovation initiatives by identifying areas of social need and gaps that exist. The project has investigated areas not provided,or funded, via traditional public and private  sources.</p>
@@ -21,12 +30,13 @@
                 <a href="#datamapping"><li>Data mapping and results visualisation</li></a>
                 <a href="#ideasgeneration"><li>Ideas Generation and co-design</li></a>
             </ul>
-        </p></div>
-            <div class="column is-offset-1">
-                <figure class="image is-256x256">
-                    <img class="image" src="/static/img/What_we_do.png" alt="" srcset="">
-                </figure>
-            </div>
+        </p>
+        </div>
+        <div class="column is-offset-1">
+            <figure class="image is-256x256">
+                <img class="image" src="/static/img/What_we_do.png" alt="" srcset="">
+            </figure>
+        </div>
             
         </div>
 
