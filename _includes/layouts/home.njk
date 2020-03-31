@@ -90,7 +90,7 @@
 </section>
 
 {# INSIGHTS header #}
-<section class="section insights">
+{# <section class="section insights">
   <div class="container">
     <div class="columns is-paddingless has-text-centered is-multiline">
       <div class="column has-mapsi-padding-small has-background-mapsi-grey is-full">
@@ -104,7 +104,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> #}
 
 {# DUNDEE PICTURE #}
 <section class="section dundee-picture">
@@ -113,15 +113,21 @@
     {# Dundee picture header #}
     <div class="columns is-vcentered has-text-centered">
       <div class="column has-mapsi-padding">
-        <h2 class="is-size-5 has-text-weight-medium is-uppercase has-text-mapsi-darkblue">Dundee picture</h2>
+        <h2 class="is-size-5 has-text-weight-medium is-uppercase has-text-mapsi-darkblue">Blog</h2>
       </div>
     </div>
 
     <div class="columns has-text-centered">
-
-      {{ macros.blog_card('Quality Mapping of Needs', '#', '/static/img/placeholder/data_idea.jpg') }}
-      {{ macros.blog_card('Data mapping and result visualisation', '#', '/static/img/placeholder/data_idea.jpg') }}
-      {{ macros.blog_card('Ideas generation and co-design', '#', '/static/img/placeholder/data_idea.jpg') }}
+    
+      {% for post in collections.post | reverse %}
+        {% if loop.index0 < 3 %}
+          {{ macros.blog_card(
+              post.data.title,
+              post.url, 
+              post.data.image) 
+          }}    
+        {% endif %}
+      {% endfor %}
 
     </div>
 
