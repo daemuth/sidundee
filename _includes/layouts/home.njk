@@ -10,12 +10,10 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="is-size-1 title">
-        {# FIXME: Get this from a data file #}
-        Mapping for Social Innovation
+        {{ hero_title}}
       </h1>
       <h2 class="subtitle">
-        {# FIXME: Get this from a data file #}
-        Exploring existing social needs and providing<br/> user-driven innovation solutions
+        {{ hero_description | safe }}        
       </h2>
     </div>
   </div>
@@ -42,7 +40,7 @@
     {# What we do header #}
     <div class="columns is-vcentered has-text-centered">
       <div class="column has-mapsi-padding">
-        <h2 class="is-size-5 has-text-weight-medium is-uppercase has-text-mapsi-darkblue" >What we do</h2>
+        <h2 class="is-size-5 has-text-weight-medium is-uppercase has-text-mapsi-darkblue" >{{ first_header_title }}</h2>
       </div>
     </div>
 
