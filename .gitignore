@@ -2,3 +2,6 @@ _site/
 node_modules/
 package-lock.json
 _includes/assets/css/bulma.css
+
+# Local Netlify folder
+.netlify
