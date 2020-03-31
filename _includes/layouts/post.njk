@@ -17,42 +17,95 @@
     <figure class="image"><img src="{{ image }}" alt=""></figure>
   {% endif %}
   
+  {# Content #}  
   <section class="section content">
+    {# Header image #}
     {% if image_style == "padded"  %}
       <figure class="image"><img src="{{ image }}" alt=""></figure>
     {% elif image_style == "small" %}
       <figure class=" small-header image"><img src="{{ image }}" alt=""></figure>
     {% endif %}
-      <div class="container">
-          <div class="columns">
-              {% if info_panel == "side" %}
-                <div class="column is-full-mobile is-3 post-details">
-                  <p>
-                    <span class="author">Author: <b>{{ author.name }}</b></span>
-                  </p>
-                  <p>
-                    <span class="posted">Posted: <b><time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time></b></span>
-                  </p>
-                  <p>
-                  {% if tags %}
-                  <p class="tags">                
-                      {% for tag in tags %}
-                        {%- if tag != "post" -%}                        
-                          <span class="tag">{{ tag }}</span>
-                        {%- endif -%}
-                      {% endfor %}               
-                  </p>
-                  {% endif %}
-                </div>
-              {% endif %}
+    
+    {% if info_panel == "side" %}
+      <div class="container">      
+          <div class="columns">   
 
-              <div class="column is-full-mobile is-7 has-text-justified is-centered line-height">
+            {# Side info column  #}
+            <div class="column is-full-mobile is-3 post-details">
+              <p>
+                <span class="author">Author: <b>{{ author.name }}</b></span>
+              </p>
+              <p>
+                <span class="posted">Posted: <b><time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time></b></span>
+              </p>
+              <p>
+              {% if tags %}
+              <p class="tags">                
+                  {% for tag in tags %}
+                    {%- if tag != "post" -%}                        
+                      <span class="tag">{{ tag }}</span>
+                    {%- endif -%}
+                  {% endfor %}               
+              </p>
+              {% endif %}
+            </div>
+            {# Content column  #}
+            <div class="column is-full-mobile is-7 has-text-justified is-centered line-height">
+            {% if image_style == "inline"  %}
+                <figure class="image is-paddingless is-marginless"><img src="{{ image }}" alt=""></figure>
+            {% endif %}
+                {{ layoutContent | safe }} 
+            </div>
+        </div>
+    {% endif %}
+
+    {% if info_panel == "inline" %}
+      <div class="container">
+        
+        <div class="columns is-centered is-mobile is-multiline">
+          <div class="column is-full-mobile is-7-desktop is-centered">
+            
+            {# Side info column  #}
+            <div class="column is-full">
+              <div class="columns">
+
+                <div class="column">
+                  <span class="author">Author: <b>{{ author.name }}</b></span>
+                </div>
+
+                <div class="column">
+                  <span class="posted">Posted: <b><time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time></b></span>
+                </div>
+
+                {% if tags %}
+                  <div class="column">
+                    <p class="tags">                
+                        {% for tag in tags %}
+                          {%- if tag != "post" -%}                        
+                            <span class="tag">{{ tag }}</span>
+                          {%- endif -%}
+                        {% endfor %}               
+                    </p>
+                  </div>
+                {% endif %}  
+
+              </div>
+            </div>
+
+            <div class="column is-full has-text-justified is-centered line-height">
               {% if image_style == "inline"  %}
-                 <figure class="image is-paddingless is-marginless"><img src="{{ image }}" alt=""></figure>
+                  <figure class="image is-paddingless is-marginless"><img src="{{ image }}" alt=""></figure>
               {% endif %}
                   {{ layoutContent | safe }} 
-              </div>
+            </div>
           </div>
+          
+
+
+        </div>
+
+      </div>
+    {% endif %}
       </div>
   </section>
 </article>
