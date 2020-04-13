@@ -1,0 +1,10 @@
+
+{% import "../components/macros/macros.njk" as macros %}
+
+{% for post in postslist | reverse %}
+	{{ macros.blog_card(
+			post.data.title,
+			post.url, 
+			post.data.image) 
+	}}
+{% endfor %}

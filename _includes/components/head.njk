@@ -1,0 +1,43 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="robots" content="noindex">
+
+  
+  <title>{{ title or renderData.title or metadata.title }}</title>
+  <script async="async" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+  {% set css %}  
+    {% include "assets/css/bulma.css" %}
+    {% include "assets/css/prismjs_ateliersulphurpool-light.css" %}
+  {% endset %}
+
+  {% if config.environment == "production" %}
+    <style>
+      {{css | cssmin | safe}}
+    </style>
+  {% else %}
+    <style>
+      {{css | safe}}
+    </style>
+  {% endif %}
+
+  {% set js %}
+  {% include "assets/js/inline.js" %}
+  {% include "static/konami.js" %}
+  {% endset %}
+
+  {% if config.environment == "production" %}
+    <script type="text/javascript">
+      {{ js | jsmin | safe }}
+    </script>
+  {% else %}
+    <script type="text/javascript">
+      {{ js | safe }}
+    </script>
+  {% endif %}
+
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&display=swap" rel="stylesheet">
+  <script defer="defer" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>

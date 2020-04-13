@@ -1,0 +1,153 @@
+{% extends 'layouts/base.njk' %}
+
+{% import "../components/macros/macros.njk" as macros %}
+
+{% block content %}
+
+{# Hero image #}
+
+<section class="hero is-medium custom-hero-background">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="is-size-1 title">
+        {{ hero_title}}
+      </h1>
+      <h2 class="subtitle">
+        {{ hero_description | safe }}        
+      </h2>
+    </div>
+  </div>
+</section>
+
+{# Down arrow 
+  TODO: Make this clickable?
+#}
+
+<section class="section has-no-bottom-padding">
+  <div class="container">
+    <div class="columns has-text-centered">
+      <div class="column">
+        <img src="/static/img/arrow-down-sign-to-navigate.png">
+      </div>
+    </div>
+  </div>
+</section>
+
+{# What we do section #}
+<section class="section is-paddingless what-we-do">
+  <div class="container">
+
+    {# What we do header #}
+    <div class="columns is-vcentered has-text-centered">
+      <div class="column has-mapsi-padding">
+        <h2 class="is-size-5 has-text-weight-medium is-uppercase has-text-mapsi-darkblue">What we do</h2>
+      </div>
+    </div>
+
+    <div class="columns is-half has-text-centered">
+
+      <div class="column is-narrow what-we-do-card is-one-third-desktop">
+        <div class="columns is-paddingless is-marginless is-multiline">
+          <div class="column is-full has-top-rounded-corners">
+            <img src="/static/img/qualitative-research.png">
+          </div>
+          <div class="column is-full has-bottom-rounded-corners">
+            <h3 class="has-text-weight-medium is-uppercase has-text-mapsi-darkblue">Qualitative <br/> Mapping of Needs</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-narrow what-we-do-card is-one-third-desktop">
+        <div class="columns is-paddingless is-marginless is-multiline">
+          <div class="column is-full has-top-rounded-corners">
+            <img src="/static/img/laptop.png">
+          </div>
+          <div class="column is-full has-bottom-rounded-corners">
+            <h3 class="has-text-weight-medium is-uppercase has-text-mapsi-darkblue">Data Mapping and<br/> result visualisation</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-narrow what-we-do-card is-one-third-desktop">
+        <div class="columns is-paddingless is-marginless is-multiline">
+          <div class="column is-full has-top-rounded-corners">
+            <img src="/static/img/teamwork.png">
+          </div>
+          <div class="column is-full has-bottom-rounded-corners">
+            <h3 class="has-text-weight-medium is-uppercase has-text-mapsi-darkblue">Ideas generation<br/> and co-design</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns has-mapsi-padding is-8 has-text-centered">
+      <div class="column ">
+        <a href="/whatwedo" class="button mapsi is-medium is-uppercase">Explore</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{# INSIGHTS header #}
+{# <section class="section insights">
+  <div class="container">
+    <div class="columns is-paddingless has-text-centered is-multiline">
+      <div class="column has-mapsi-padding-small has-background-mapsi-grey is-full">
+        <h2 class="is-size-5 has-text-weight-medium is-uppercase has-text-mapsi-darkblue">Insights</h2>
+      </div>
+      <div class="column is-inline-flex is-paddingless is-marginless">
+
+        <img src="https://miro.medium.com/max/3840/1*a7lH8GwGgmOUX8vWnIG2mw.png"></img>
+        &nbsp;
+
+      </div>
+    </div>
+  </div>
+</section> #}
+
+{# Blog #}
+<section class="section dundee-picture has-background-mapsi-grey">
+  <div class="container">
+
+    {# Blog #}
+    <div class="columns is-vcentered has-text-centered">
+      <div class="column has-mapsi-padding">
+        <h2 class="is-size-5 has-text-weight-medium is-uppercase has-text-mapsi-darkblue">Blog</h2>
+      </div>
+    </div>
+
+    <div class="columns has-text-centered">
+    
+      {% for post in collections.post | reverse %}
+        {% if loop.index0 < 3 %}
+          {{ macros.blog_card(
+              post.data.title,
+              post.url, 
+              post.data.image) 
+          }}    
+        {% endif %}
+      {% endfor %}
+
+    </div>
+
+
+    <div class="columns has-mapsi-padding is-8 has-text-centered">
+      <div class="column">
+        <a href="/blog" class="button mapsi is-medium is-uppercase">Explore</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section contactform has-background-mapsi-white">
+    <div class="columns is-centered is-vcentered">
+      <div class="column has-text-centered is-4">
+      <h2 class="is-size-5 has-text-weight-medium is-uppercase has-text-mapsi-darkblue">Contact us</h2> <br/>
+      {% include "components/form.njk" %}
+      </div>
+    </div>
+
+  </section>
+
+{% endblock %}

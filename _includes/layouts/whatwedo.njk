@@ -1,0 +1,149 @@
+{% extends 'layouts/base.njk' %}
+{% import "../components/macros/macros.njk" as macros %}
+
+{% block content %}    
+
+{{ macros.page_title(title) }}
+
+<section class="section has-background-mapsi-white">
+    <div class="container content">
+        <h2 class="has-text-centered is-size-4 is-uppercase">The project</h2>
+        <div class="columns is-centered is-vcentered">
+        <div class="column is-offset-1 is-vcentered has-text-justified">
+            <p>Mapping for Social Innovation in Dundee is the research project based at Abertay University with support of The Northwood Charitable Trust.</p>
+            <p>We  explore how to build user-driven and sustainable social innovation initiatives by identifying areas of social need and gaps that exist. The project has investigated areas not provided,or funded, via traditional public and private  sources.</p>
+            <p> The approach we propose places particular emphasis on working closely with various local groups to identify the existing gaps and the forms of social innovation that would benefit them. Thus, our research is divided into three overlapping phases:</p>
+            <ul>
+                <a href="#qualitative"><li>Qualitative mapping of needs</li></a>
+                <a href="#datamapping"><li>Data mapping and results visualisation</li></a>
+                <a href="#ideasgeneration"><li>Ideas Generation and co-design</li></a>
+            </ul>
+        </p></div>
+            <div class="column is-offset-1">
+                <figure class="image is-256x256">
+                    <img class="image" src="/static/img/What_we_do.png" alt="" srcset="">
+                </figure>
+            </div>
+            
+        </div>
+
+    </div>
+</section>
+
+<section id="qualitative" class="section has-background-mapsi-grey">
+    <div class="container content">
+        <h2 class="has-text-centered is-size-4 is-uppercase">Qualitative mapping of needs</h2>
+        <div class="columns  has-mapsi-padding-small is-centered is-vcentered">
+            <div class="column is-offset-1 has-text-justified">
+            <p>This phase involves a qualitative study mapping in-depth the local community’s most pressing social needs and exploring work of Dundee’s third sector organisations in meeting the unmet needs. This exercise helps bring to the fore how the city’s grassroot initiatives are mobilising socially innovative solutions, and underscores those initiatives’ further resource requirements.</p>
+            <p>Support organisations like trusts and social investors are also consulted to obtain a richer picture on the resource gaps. Currently, data is being collected semi-structured interviews following an initial scoping of the field. </p>
+            
+            <p>Researcher/Study undertaken by: Nadeen Purna</p>
+                
+            </div>
+            <div class="column is-offset-1 is-vcentered">            
+                <figure class="image is-256x256">
+                        <img class="what-we-do-icon" src="/static/img/qualitative-research.png" alt="">
+                </figure>
+        </p></div>
+        </div>
+
+    </div>
+</section>
+
+<section id="datamapping" class="section has-background-mapsi-white">
+    <div class="container content">
+        <h2 class="has-text-centered is-size-4 is-uppercase">Data mapping and results visualisation</h2>
+        <div class="columns has-mapsi-padding-small is-centered is-vcentered">
+            <div class="column is-offset-1">
+                <figure class="image is-256x256">
+                    <img class="image what-we-do-icon" src="/static/img/laptop.png" alt="Laptop image">
+                </figure>
+            </div>
+            <div class="column is-offset-1 is-vcentered has-text-justified">
+            <p>Through leveraging the use of new techniques from the emerging Data Science field there will be extensive mapping of activities across the entire local community. It will support a broad and structured overview of the local activities and needs. The creation of a website for making all the information from the mapping available to a variety of interested organisations and individuals, also comes under this phase.</p>
+            <p>Researcher/Study undertaken by: Akos Demuth</p>
+        </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="ideasgeneration" class="section has-background-mapsi-grey">
+    <div class="container content">
+        <h2 class="has-text-centered is-size-4 is-uppercase">Ideas generation and co-design</h2>
+        <div class="columns has-mapsi-padding-small is-centered is-vcentered">
+            <div class="column is-offset-1 has-text-justified">
+            <p>In a third phase, initial generation of ideas for Social Innovation will then be conducted. Co-design and co-creation activities will be undertaken in order to support people in designing the social innovation solutions for their needs. We will leverage our expertise in User-Canter design in this process and arrive at a proposition of a portfolio of feasible ideas. Depending on resources, this phase could lead to assessing the feasibility of the creation and trialling of apps//digital technology which address the needs identified.</p>
+            
+            <p>Researcher/Study undertaken by: Olena Saienko</p>
+                
+            </div>
+            <div class="column is-offset-1 is-vcentered">            
+                <figure class="image is-256x256">
+                        <img class="image what-we-do-icon" src="/static/img/teamwork.png" alt="">
+                </figure>
+        </p></div>
+        </div>
+
+    </div>
+</section>
+<section class="section has-background-mapsi-white">
+    <div class="container content is-paddingless">
+        <h2 class="has-text-centered is-size-4 is-uppercase">The team</h2>
+    </div>
+    <div class="container">
+    <div class="columns is-centered is-multiline is-mobile">
+            {{ macros.about_us_card(
+                    "Stefano De Paoli",
+                    "Senior lecturer",
+                    "#", 
+                    "/static/img/photos/Photos358x305/Stefano.png") 
+            }}
+            {{ macros.about_us_card(
+                    "Iain Donald",
+                    "Senior lecturer",
+                    "#", 
+                    "/static/img/photos/Photos358x305/Iain_new.JPG",
+                    "iain") 
+            }}
+            {{ macros.about_us_card(
+                    "Jan Law",
+                    "Teaching fellow",
+                    "#", 
+                    "/static/img/photos/Photos358x305/Jan.png") 
+            }}
+            {{ macros.about_us_card(
+                    "Nadeen Purna",
+                    "PhD Student",
+                    "#", 
+                    "/static/img/photos/Photos358x305/Nadeen.png") 
+            }}
+            {{ macros.about_us_card(
+                    "Akos Demuth",
+                    "PhD Student",
+                    "#", 
+                    "/static/img/photos/Photos358x305/Akos.png") 
+            }}
+            {{ macros.about_us_card(
+                    "Olena Saienko",
+                    "PhD Student",
+                    "#", 
+                    "/static/img/photos/Photos358x305/Olena.png") 
+            }}      
+        </div>                      
+    </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+var easter_egg = new Konami(function()
+{ 
+    var iain_img = document.getElementById("iain");
+    iain_img.src="/static/img/photos/Photos358x305/iain_2.png";
+    iain_img.style.width = "100%";
+    iain_img.style.heigth = "305px";
+
+});
+</script>
+{% endblock %}    

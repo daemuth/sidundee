@@ -1,0 +1,26 @@
+
+{% extends 'layouts/base.njk' %}
+{% import "../components/macros/macros.njk" as macros %}
+
+{% block content %}    
+
+    {% if title %}
+        {{ macros.page_title(title) }}
+    {% elif renderData.title %}
+        {{ macros.page_title(renderData.title) }}
+    {% else %}
+        {# This shouldn't ever happen but you know how things are... #}
+        {{ macros.page_title("No title found") }} 
+    {% endif %}
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline" >
+
+                {% set postslist = collections[ renderData.collection ] %}
+                {% include "components/postslist.njk" %}                            
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

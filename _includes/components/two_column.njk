@@ -1,0 +1,11 @@
+{% macro two_column(title, img, content) %}
+    <h2 class="is-uppercase has-text-centered">{{ title }}</h2>
+    <div class="columns">
+        <div class="column">
+            <img src="{{ img }}" alt="" srcset="">
+        </div>
+        <div class="column">
+            <p>{{ content }}</p>
+        </div>
+    </div>
+{% endmacro %}

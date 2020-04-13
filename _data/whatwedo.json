@@ -1,0 +1,19 @@
+{
+    "aspects": [
+        {
+            "title": "Test",
+            "description" : "Description",
+            "img_url": "URL"
+        },
+        {
+            "title": "Test2",
+            "description" : "Description",
+            "img_url": "URL"
+        },
+        {
+            "title": "Test3",
+            "description" : "Description",
+            "img_url": "URL"
+        }
+    ]
+}
