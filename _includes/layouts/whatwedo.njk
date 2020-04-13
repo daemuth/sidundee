@@ -1,13 +1,10 @@
 {% extends 'layouts/base.njk' %}
-
 {% import "../components/macros/macros.njk" as macros %}
 
 {% block content %}    
-<div class="content columns is-marginless is-paddingless">
-    <div class="column is-paddingless is-full">
-        <h1 class="is-size-1 has-text-centered">{{ title }}</h1>
-    </div>
-</div>
+
+{{ macros.page_title(title) }}
+
 <section class="section has-background-mapsi-white">
     <div class="container content">
         <h2 class="has-text-centered is-size-4 is-uppercase">The project</h2>
