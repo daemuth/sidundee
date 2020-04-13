@@ -1,9 +1,10 @@
 {
-  "title": "SIDundee Study",
-  "url": "https://eleventy-netlify-boilerplate.netlify.com",
+  "title": "SIDundee",
+  "url": "https://sidundee.study",
+  "staging_url": "https://staging.sidundee.study",
   "author": {
-    "name": "Dan Urbanowicz",
-    "email": "dan.urbanowicz@gmail.com",
-    "github": "https://github.com/danurbanowicz"
+    "name": "Akos Demuth",
+    "email": "hello@akos.land",
+    "github": "https://github.com/daemuth"
   }
 }
