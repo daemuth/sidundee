@@ -7,6 +7,7 @@ info_panel: inline
 tags:
   - post
   - social innovation
+  - dundee
 author:
   name: Nadeen Purna
 ---

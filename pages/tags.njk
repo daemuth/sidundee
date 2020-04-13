@@ -1,0 +1,17 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+permalink: /tags/{{ tag }}/
+collection: {{ tag }}
+layout: layouts/blog.njk
+renderData:
+  title: Posts tagged with “{{ tag | capitalize}}”
+  collection: "{{ tag }}"
+---

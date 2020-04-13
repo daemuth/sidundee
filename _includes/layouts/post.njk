@@ -5,12 +5,8 @@
 {% block content %}    
 
 <article>
-  {# Title #}
-  <div class="content columns is-marginless is-paddingless no-margin-bottom">
-      <div class="column is-paddingless is-full no-margin-bottom">
-          <h1 class="is-size-1 has-text-centered no-margin-bottom">{{ title }}</h1>
-      </div>
-  </div>
+
+  {{ macros.page_title(title) }}
 
   {# Header image #}  
   {% if image_style == "full" %}
@@ -40,13 +36,9 @@
               </p>
               <p>
               {% if tags %}
-              <p class="tags">                
-                  {% for tag in tags %}
-                    {%- if tag != "post" -%}                        
-                      <span class="tag">{{ tag }}</span>
-                    {%- endif -%}
-                  {% endfor %}               
-              </p>
+                <p class="tags">                
+                      {{ macros.taglist(tags) }}               
+                </p>
               {% endif %}
             </div>
             {# Content column  #}
@@ -80,11 +72,7 @@
                 {% if tags %}
                   <div class="column">
                     <p class="tags">                
-                        {% for tag in tags %}
-                          {%- if tag != "post" -%}                        
-                            <span class="tag">{{ tag }}</span>
-                          {%- endif -%}
-                        {% endfor %}               
+                        {{ macros.taglist(tags) }}       
                     </p>
                   </div>
                 {% endif %}  

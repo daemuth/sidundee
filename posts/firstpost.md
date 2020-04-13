@@ -7,6 +7,7 @@ info_panel: inline
 tags:
   - post
   - social innovation
+  - teampost
 author:
   name: Project Team
 ---
