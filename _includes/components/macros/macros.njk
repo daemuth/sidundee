@@ -2,8 +2,8 @@
     <div class="column is-narrow what-we-do-card is-one-third-desktop is-full-mobile">
         <a href="{{url}}">
             <div class="columns is-paddingless is-marginless is-multiline">
-                <div class="column is-flex is-paddingless is-marginless is-full has-top-rounded-corners">
-                    <img class="has-top-rounded-corners" src="{{ image }}"></img>
+                <div class="column blog-card-image is-flex is-paddingless is-marginless is-full has-top-rounded-corners">
+                    <img class="has-top-rounded-corners" src="{{ image }}">
                     </div>
                     <div class="column is-full has-bottom-rounded-corners has-background-mapsi-darkblue has-text-mapsi-white">
                 <h3>{{ title }}</h3>
@@ -39,4 +39,14 @@
             <h1 class="is-size-1 has-text-centered">{{ title }}</h1>
         </div>
     </div>
+{% endmacro %}
+
+{% macro taglist(tags) %}
+    {% for tag in tags %}
+        {%- if tag != "post" -%}                        
+            <a href="/tags/{{tag}}">
+                <span class="tag">{{ tag }}</span>
+            </a>
+        {%- endif -%}
+    {% endfor %}
 {% endmacro %}
