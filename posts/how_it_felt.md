@@ -6,8 +6,7 @@ image_style: small
 info_panel: inline
 tags:
   - post
-  - social innovation
-  - teampost
+  - guest post
 author:
   name: How It Felt
 ---
@@ -22,3 +21,5 @@ We work mostly within Dundee but have worked in other areas around Scotland. Dun
 One story that comes to mind is one of our clients who has used our service a few times now and seems to benefit from it. At the time they were still in school and I was at an event were by chance bumped into a teacher we had worked in the past with and turns out the client was a student of theirs. And that at school they were a mute who didn’t really speak but after bringing their puppet to class with them could now speak through it and communicate more positively. I had no idea that they were mute and the impact our service had till that chance meeting.
 
 I think for every business COVID-19 is impacting everyone financially. Working from home has been difficult to maintain a routine and sometimes good mental health. All of our future events and workshops have had to be cancelled or postponed right up to Summer. We have been doing a lot of work online on providing activities, videos, art communities, and puppetry fun to communicate. We even had an online puppet building workshop with a client which is a first. I do think this will change the way businesses work forever and even how we connect with people, it’s quite historic what is happening. I would rather that we are all sensible and safe during this time. 
+
+Find 'How It Felt' on: [Facebook](https://www.facebook.com/HowItFelt/) | [Instagram](https://www.instagram.com/howitfelt_littledebz/) | [Twitter](https://twitter.com/markanddebz) | [YouTube](https://www.youtube.com/user/howitfelt)
