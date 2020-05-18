@@ -1,7 +1,7 @@
 ---
 title: What is 'How it felt' all about?
 date: 2020-04-28
-image: https://images.unsplash.com/photo-1512758017271-d7b84c2113f1
+image: static/img/posts/how_it_felt.png
 image_style: small
 info_panel: inline
 tags:
