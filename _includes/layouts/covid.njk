@@ -1,0 +1,862 @@
+{% extends 'layouts/base.njk' %}
+{% import "../components/macros/macros.njk" as macros %}
+
+{% block content %}
+
+    {{ macros.page_title(title) }}
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered is-multiline">
+                <div class="column is-full-mobile is-7-desktop is-centered">
+                    <div>
+                        <canvas id="myChart" width=450 height=300></canvas>
+                    </div>
+                </div>
+                <div class="column is-full-mobile is-7-desktop is-centered">
+                    <div>
+                        <canvas id="countChart" width=450 height=300></canvas>
+                    </div>
+                </div>
+                <div class="column is-full-mobile is-7-desktop is-centered">
+                    <div>
+                        <canvas id="dailyChart" width=450 height=300></canvas>
+                    </div>
+                </div>
+                <div class="column is-full-mobile is-7-desktop is-centered">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+
+    <script>
+
+
+var data_time = [
+  {
+    x: new Date(2020, 03, 01),
+    y: 0
+  },
+  {
+    x: new Date(2020, 03, 02),
+    y: 1
+  },
+  {
+    x: new Date(2020, 03, 03),
+    y: 1
+  },
+  {
+    x: new Date(2020, 03, 04),
+    y: 3
+  },
+  {
+    x: new Date(2020, 03, 05),
+    y: 6
+  },
+  {
+    x: new Date(2020, 03, 06),
+    y: 9
+  },
+  {
+    x: new Date(2020, 03, 07),
+    y: 13
+  },
+  {
+    x: new Date(2020, 03, 08),
+    y: 15
+  },
+  {
+    x: new Date(2020, 03, 09),
+    y: 20
+  },
+  {
+    x: new Date(2020, 03, 10),
+    y: 26
+  },
+  {
+    x: new Date(2020, 03, 11),
+    y: 52
+  },
+  {
+    x: new Date(2020, 03, 12),
+    y: 80
+  },
+  {
+    x: new Date(2020, 03, 13),
+    y: 107
+  },
+  {
+    x: new Date(2020, 03, 14),
+    y: 133
+  },
+  {
+    x: new Date(2020, 03, 15),
+    y: 151
+  },
+  {
+    x: new Date(2020, 03, 16),
+    y: 183
+  },
+  {
+    x: new Date(2020, 03, 17),
+    y: 215
+  },
+  {
+    x: new Date(2020, 03, 18),
+    y: 259
+  },
+  {
+    x: new Date(2020, 03, 19),
+    y: 305
+  },
+  {
+    x: new Date(2020, 03, 20),
+    y: 359
+  },
+  {
+    x: new Date(2020, 03, 21),
+    y: 415
+  },
+  {
+    x: new Date(2020, 03, 22),
+    y: 495
+  },
+  {
+    x: new Date(2020, 03, 23),
+    y: 559
+  },
+  {
+    x: new Date(2020, 03, 24),
+    y: 674
+  },
+  {
+    x: new Date(2020, 03, 25),
+    y: 849
+  },
+  {
+    x: new Date(2020, 03, 26),
+    y: 1023
+  },
+  {
+    x: new Date(2020, 03, 27),
+    y: 1178
+  },
+  {
+    x: new Date(2020, 03, 28),
+    y: 1365
+  },
+  {
+    x: new Date(2020, 03, 29),
+    y: 1528
+  },
+  {
+    x: new Date(2020, 03, 30),
+    y: 1862
+  },
+  {
+    x: new Date(2020, 03, 31),
+    y: 2228
+  },
+  {
+    x: new Date(2020, 04, 01),
+    y: 2547
+  },
+  {
+    x: new Date(2020, 04, 02),
+    y: 2883
+  },
+  {
+    x: new Date(2020, 04, 03),
+    y: 3244
+  },
+  {
+    x: new Date(2020, 04, 04),
+    y: 3656
+  },
+  {
+    x: new Date(2020, 04, 05),
+    y: 3901
+  },
+  {
+    x: new Date(2020, 04, 06),
+    y: 4106
+  },
+  {
+    x: new Date(2020, 04, 07),
+    y: 4533
+  },
+  {
+    x: new Date(2020, 04, 08),
+    y: 4895
+  },
+  {
+    x: new Date(2020, 04, 09),
+    y: 5211
+  },
+  {
+    x: new Date(2020, 04, 10),
+    y: 5539
+  },
+  {
+    x: new Date(2020, 04, 11),
+    y: 5843
+  },
+  {
+    x: new Date(2020, 04, 12),
+    y: 6017
+  },
+  {
+    x: new Date(2020, 04, 13),
+    y: 6290
+  },
+  {
+    x: new Date(2020, 04, 14),
+    y: 6668
+  },
+  {
+    x: new Date(2020, 04, 15),
+    y: 7041
+  },
+  {
+    x: new Date(2020, 04, 16),
+    y: 7342
+  },
+  {
+    x: new Date(2020, 04, 17),
+    y: 7747
+  },
+  {
+    x: new Date(2020, 04, 18),
+    y: 8135
+  },
+  {
+    x: new Date(2020, 04, 19),
+    y: 8408
+  },
+  {
+    x: new Date(2020, 04, 20),
+    y: 8570
+  },
+  {
+    x: new Date(2020, 04, 21),
+    y: 8967
+  },
+  {
+    x: new Date(2020, 04, 22),
+    y: 9322
+  },
+  {
+    x: new Date(2020, 04, 23),
+    y: 9683
+  },
+  {
+    x: new Date(2020, 04, 24),
+    y: 9963
+  },
+  {
+    x: new Date(2020, 04, 25),
+    y: 10291
+  },
+  {
+    x: new Date(2020, 04, 26),
+    y: 10484
+  },
+  {
+    x: new Date(2020, 04, 27),
+    y: 10672
+  },
+  {
+    x: new Date(2020, 04, 28),
+    y: 10963
+  },
+  {
+    x: new Date(2020, 04, 29),
+    y: 11307
+  },
+  {
+    x: new Date(2020, 04, 30),
+    y: 11596
+  },
+  {
+    x: new Date(2020, 05, 01),
+    y: 11860
+  },
+  {
+    x: new Date(2020, 05, 02),
+    y: 12054
+  },
+  {
+    x: new Date(2020, 05, 03),
+    y: 12234
+  },
+  {
+    x: new Date(2020, 05, 04),
+    y: 12418
+  },
+  {
+    x: new Date(2020, 05, 05),
+    y: 12611
+  },
+  {
+    x: new Date(2020, 05, 06),
+    y: 12871
+  },
+  {
+    x: new Date(2020, 05, 07),
+    y: 13102
+  },
+  {
+    x: new Date(2020, 05, 08),
+    y: 13275
+  },
+  {
+    x: new Date(2020, 05, 09),
+    y: 13474
+  },
+  {
+    x: new Date(2020, 05, 10),
+    y: 13607
+  },
+  {
+    x: new Date(2020, 05, 11),
+    y: 13738
+  },
+  {
+    x: new Date(2020, 05, 12),
+    y: 13884
+  },
+  {
+    x: new Date(2020, 05, 13),
+    y: 14091
+  },
+  {
+    x: new Date(2020, 05, 14),
+    y: 14252
+  },
+  {
+    x: new Date(2020, 05, 15),
+    y: 14411
+  },
+  {
+    x: new Date(2020, 05, 16),
+    y: 14532
+  },
+  {
+    x: new Date(2020, 05, 17),
+    y: 14582
+  },
+  {
+    x: new Date(2020, 05, 18),
+    y: 14640
+  },
+  {
+    x: new Date(2020, 05, 19),
+    y: 14729
+  },
+  {
+    x: new Date(2020, 05, 20),
+    y: 14844
+  },
+  {
+    x: new Date(2020, 05, 21),
+    y: 14948
+  },
+  {
+    x: new Date(2020, 05, 22),
+    y: 15030
+  },
+  {
+    x: new Date(2020, 05, 23),
+    y: 15100
+  },
+  {
+    x: new Date(2020, 05, 24),
+    y: 15156
+  }
+];
+
+        var ctx = document
+            .getElementById('myChart')
+            .getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    '1 (Most Deprived)', '2', '3', '4', '5 (Least deprived)'
+                ],
+                datasets: [
+                    {
+                        label: '% of COVID-19 related contacts to NHS24 per SIMD domicile',
+                        data: [
+                            28, 23, 18, 16, 14
+                        ],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)'
+                        ],
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    yAxes: [
+                        {
+                            ticks: {
+                                beginAtZero: true,
+                                callback: function (value, index, values) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    ]
+                },
+                tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            var label = data
+                                .datasets[tooltipItem.datasetIndex]
+                                .label || '';
+
+                            if (label) {
+                                label += ': ';
+                            }
+                            label += tooltipItem.yLabel;
+                            return tooltipItem.yLabel + '%';
+                        }
+                    }
+                }
+            }
+        });
+
+        var countChart = document
+            .getElementById('countChart')
+            .getContext('2d');
+
+        var countChartJS = new Chart(countChart, 
+        {
+            type: 'line',
+            data:
+            {
+                datasets:
+                [
+                    {
+                        label: "Confirmed COVID cases",
+                        data: data_time,
+                        borderColor: 'blue'
+                    }
+                ]
+            },
+            options:
+            {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: "Confirmed COVID cases in Scotland over time"
+                },
+                scales: 
+                {
+                    xAxes: [
+                        {
+                            type: "time"
+                        }
+                    ]
+                }
+            }
+        });
+
+    var dailyChart = document
+            .getElementById('dailyChart')
+            .getContext('2d');
+
+    var daily_cases_data = 
+    [
+        {
+            x: new Date(2020, 03, 01),
+            y: 0
+        },
+        {
+            x: new Date(2020, 03, 02),
+                y: 1
+        },
+        {
+            x: new Date(2020, 03, 03),
+                y: 0
+        },
+        {
+            x: new Date(2020, 03, 04),
+                y: 2
+        },
+        {
+            x: new Date(2020, 03, 05),
+                y: 3
+        },
+        {
+            x: new Date(2020, 03, 06),
+                y: 3
+        },
+        {
+            x: new Date(2020, 03, 07),
+                y: 4
+        },
+        {
+            x: new Date(2020, 03, 08),
+                y: 2
+        },
+        {
+            x: new Date(2020, 03, 09),
+                y: 5
+        },
+        {
+            x: new Date(2020, 03, 10),
+                y: 6
+        },
+        {
+            x: new Date(2020, 03, 11),
+                y: 26
+        },
+        {
+            x: new Date(2020, 03, 12),
+                y: 28
+        },
+        {
+            x: new Date(2020, 03, 13),
+                y: 27
+        },
+        {
+            x: new Date(2020, 03, 14),
+                y: 26
+        },
+        {
+            x: new Date(2020, 03, 15),
+                y: 18
+        },
+        {
+            x: new Date(2020, 03, 16),
+                y: 32
+        },
+        {
+            x: new Date(2020, 03, 17),
+                y: 32
+        },
+        {
+            x: new Date(2020, 03, 18),
+                y: 44
+        },
+        {
+            x: new Date(2020, 03, 19),
+                y: 46
+        },
+        {
+            x: new Date(2020, 03, 20),
+                y: 54
+        },
+        {
+            x: new Date(2020, 03, 21),
+                y: 56
+        },
+        {
+            x: new Date(2020, 03, 22),
+                y: 80
+        },
+        {
+            x: new Date(2020, 03, 23),
+                y: 64
+        },
+        {
+            x: new Date(2020, 03, 24),
+                y: 115
+        },
+        {
+            x: new Date(2020, 03, 25),
+                y: 175
+        },
+        {
+            x: new Date(2020, 03, 26),
+                y: 174
+        },
+        {
+            x: new Date(2020, 03, 27),
+                y: 155
+        },
+        {
+            x: new Date(2020, 03, 28),
+                y: 187
+        },
+        {
+            x: new Date(2020, 03, 29),
+                y: 163
+        },
+        {
+            x: new Date(2020, 03, 30),
+                y: 334
+        },
+        {
+            x: new Date(2020, 03, 31),
+                y: 366
+        },
+        {
+            x: new Date(2020, 04, 01),
+                y: 319
+        },
+        {
+            x: new Date(2020, 04, 02),
+                y: 336
+        },
+        {
+            x: new Date(2020, 04, 03),
+                y: 361
+        },
+        {
+            x: new Date(2020, 04, 04),
+                y: 412
+        },
+        {
+            x: new Date(2020, 04, 05),
+                y: 245
+        },
+        {
+            x: new Date(2020, 04, 06),
+                y: 205
+        },
+        {
+            x: new Date(2020, 04, 07),
+                y: 427
+        },
+        {
+            x: new Date(2020, 04, 08),
+                y: 362
+        },
+        {
+            x: new Date(2020, 04, 09),
+                y: 316
+        },
+        {
+            x: new Date(2020, 04, 10),
+                y: 328
+        },
+        {
+            x: new Date(2020, 04, 11),
+                y: 304
+        },
+        {
+            x: new Date(2020, 04, 12),
+                y: 174
+        },
+        {
+            x: new Date(2020, 04, 13),
+                y: 273
+        },
+        {
+            x: new Date(2020, 04, 14),
+                y: 378
+        },
+        {
+            x: new Date(2020, 04, 15),
+                y: 373
+        },
+        {
+            x: new Date(2020, 04, 16),
+                y: 301
+        },
+        {
+            x: new Date(2020, 04, 17),
+                y: 405
+        },
+        {
+            x: new Date(2020, 04, 18),
+                y: 388
+        },
+        {
+            x: new Date(2020, 04, 19),
+                y: 273
+        },
+        {
+            x: new Date(2020, 04, 20),
+                y: 162
+        },
+        {
+            x: new Date(2020, 04, 21),
+                y: 397
+        },
+        {
+            x: new Date(2020, 04, 22),
+                y: 355
+        },
+        {
+            x: new Date(2020, 04, 23),
+                y: 361
+        },
+        {
+            x: new Date(2020, 04, 24),
+                y: 280
+        },
+        {
+            x: new Date(2020, 04, 25),
+                y: 328
+        },
+        {
+            x: new Date(2020, 04, 26),
+                y: 193
+        },
+        {
+            x: new Date(2020, 04, 27),
+                y: 188
+        },
+        {
+            x: new Date(2020, 04, 28),
+                y: 291
+        },
+        {
+            x: new Date(2020, 04, 29),
+                y: 344
+        },
+        {
+            x: new Date(2020, 04, 30),
+                y: 289
+        },
+        {
+            x: new Date(2020, 05, 01),
+                y: 264
+        },
+        {
+            x: new Date(2020, 05, 02),
+                y: 194
+        },
+        {
+            x: new Date(2020, 05, 03),
+                y: 180
+        },
+        {
+            x: new Date(2020, 05, 04),
+                y: 184
+        },
+        {
+            x: new Date(2020, 05, 05),
+                y: 193
+        },
+        {
+            x: new Date(2020, 05, 06),
+                y: 260
+        },
+        {
+            x: new Date(2020, 05, 07),
+                y: 231
+        },
+        {
+            x: new Date(2020, 05, 08),
+                y: 173
+        },
+        {
+            x: new Date(2020, 05, 09),
+                y: 199
+        },
+        {
+            x: new Date(2020, 05, 10),
+                y: 133
+        },
+        {
+            x: new Date(2020, 05, 11),
+                y: 131
+        },
+        {
+            x: new Date(2020, 05, 12),
+                y: 146
+        },
+        {
+            x: new Date(2020, 05, 13),
+                y: 207
+        },
+        {
+            x: new Date(2020, 05, 14),
+                y: 161
+        },
+        {
+            x: new Date(2020, 05, 15),
+                y: 159
+        },
+        {
+            x: new Date(2020, 05, 16),
+                y: 121
+        },
+        {
+            x: new Date(2020, 05, 17),
+                y: 50
+        },
+        {
+            x: new Date(2020, 05, 18),
+                y: 58
+        },
+        {
+            x: new Date(2020, 05, 19),
+                y: 89
+        },
+        {
+            x: new Date(2020, 05, 20),
+                y: 115
+        },
+        {
+            x: new Date(2020, 05, 21),
+                y: 104
+        },
+        {
+            x: new Date(2020, 05, 22),
+                y: 82
+        },
+        {
+            x: new Date(2020, 05, 23),
+                y: 70
+        },
+        {
+            x: new Date(2020, 05, 24),
+                y: 56
+        }
+    ];
+    
+    var dailyChartJs = new Chart(dailyChart, 
+        {
+            type: 'line',
+            data:
+            {
+                datasets:
+                [
+                    {
+                        label: "New cases per day",
+                        data: daily_cases_data,
+                        borderColor: 'blue'
+                    }
+                ]
+            },
+            options:
+            {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: "Confirmed COVID cases in Scotland over time"
+                },
+                scales: 
+                {
+                    xAxes: [
+                        {
+                            type: "time"
+                        }
+                    ],
+                    yAxes : [
+                    {
+                        type: "logarithmic"
+                    }
+                    ]
+                }
+            }
+        });
+
+    </script>
+{% endblock %}
