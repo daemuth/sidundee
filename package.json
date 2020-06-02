@@ -6,8 +6,8 @@
     "build": "npx eleventy",
     "watch": "npx eleventy --watch",
     "debug": "DEBUG=* npx eleventy",
-    "css-build": "yarn node-sass ./_includes/assets/sass/style.sass ./_includes/assets/css/bulma.css",
-    "css-watch": "yarn run css-build --watch"
+    "css-build": "yarn node-sass ./sass/style.sass ./_includes/assets/css/style.css",
+    "css-watch": " yarn run css-build && node-sass --watch sass -o ./_includes/assets/css"
 
   },
   "repository": {
