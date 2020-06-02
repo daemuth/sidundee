@@ -1,0 +1,138 @@
+{% extends 'layouts/base.njk' %}
+{% import "../components/macros/macros.njk" as macros %}
+
+{% block content %}
+
+<div class="section content">
+    <div class="container">
+        <div class="columns is-marginless is-paddingless    ">
+            <div class="column">
+            <div class="wrapper">
+  <div class="gallery">
+    <img class="gallery__img" id="image-1" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14179/kenan-sulayman-FV3M7igu8Fs-unsplash.jpg" alt="Yosemite" />
+    <img class="gallery__img" id="image-2" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14179/anastasia-dulgier-NCFTGtjY3EQ-unsplash.jpg" alt="Houses" />
+    <img class="gallery__img" id="image-3" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14179/arnaud-mariat-IPXcUYHeErc-unsplash.jpg" alt="Galaxies" />
+    <img class="gallery__img" id="image-4" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14179/matthew-smith-9CV6WrxxdrM-unsplash.jpg" alt="Motel" />
+    <img class="gallery__img" id="image-5" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14179/vladimir-kondriianenko-bxwzcFy9YwM-unsplash.jpg" alt="Minimalist nightmare" />
+  </div>
+
+<nav class="lil-nav">
+    <a href="#image-1">
+        <div class="lil-nav__img" data-index="0">
+            <p> This is the first story content.</p>
+        </div>
+    </a>
+    <a href="#image-2">
+        <div class="lil-nav__img" data-index="1">
+            <p> This is the second story content.</p>
+        </div>
+    </a>
+    <a href="#image-3">
+        <div class="lil-nav__img" data-index="2">
+            <p> This is the third story content.</p>
+        </div>
+    </a>
+    <a href="#image-4">
+        <div class="lil-nav__img" data-index="3">
+            <p> This is the fourth story content.</p>
+        </div>
+    </a>
+    <a href="#image-5">
+        <div class="lil-nav__img" data-index="4">
+            <p> This is the fifth story content.</p>
+        </div>
+    </a>
+  </nav>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+var isInViewport = function (elem) {
+    var bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
+
+var imagesOnScreen = document.querySelectorAll('.lil-nav__img');
+var navigation = document.querySelector('.wrapper');
+var currentIndex = 0;
+
+function OnFirstImageVisible()
+{
+    console.log("First image visible");
+}
+
+function OnSecondImageVisible()
+{
+    console.log("Second image visible");
+}
+
+function OnThirdImageVisible()
+{
+    console.log("Third image visible");
+}
+
+function OnFourthImageVisible()
+{
+    console.log("Fourth image visible");
+}
+
+function OnFifthImageVisible()
+{
+    console.log("Fifth image visible");
+}
+
+var functionMap = 
+[
+    {idx : 0, callback : OnFirstImageVisible},
+    {idx : 1, callback : OnSecondImageVisible},
+    {idx : 2, callback : OnThirdImageVisible},
+    {idx : 3, callback : OnFourthImageVisible},
+    {idx : 4, callback : OnFifthImageVisible}
+]
+
+function isIntersecting(element)
+{
+    return element.isIntersecting;
+}
+
+var observer = new IntersectionObserver(
+    
+    function(entries) 
+    {      
+        var currentVisibleImage = entries.find(x => x.isIntersecting)
+        if(currentVisibleImage)
+        {
+            //Get the index of the image supplied via the data attribute
+            var imageIndex = currentVisibleImage.target.getAttribute("data-index")
+            if(imageIndex != currentIndex)
+            {
+                currentIndex = imageIndex;
+                //Call the function associated with the index from the map
+                functionMap.find(x => x.idx == imageIndex).callback();
+            }
+ 
+        }
+	
+}, { threshold: [1] });
+
+// Subscribe all elements to the observer
+imagesOnScreen.forEach(function(currentImage)
+{
+    observer.observe(currentImage)
+})
+
+
+</script>
+
+
+
+{% endblock %}
