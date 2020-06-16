@@ -18,14 +18,14 @@ This is when we see a bunch of third or voluntary sector organisations bricolagi
 ## The ways the response efforts are coming about
 The response efforts in the frontline to provide food and other essentials can be summarized in 4 strands. The Story Map “Third Sector Response to COVID-19: Dundee Cases” presents examples from 25 organisations and highlights how over the period the overall responses took shape. 
 
-- Redesigning
+- **Redesigning**
   - Redesigning involves a complete turnaround of an organisation's services to respond to the pandemic 
-- Adapting 
-- This involves organisations adapting themselves by retaining (some) existing programmes especially by shifting those online, but also included additional services tailored to the current crisis needs
-- Expanding
-- Expanding involves community-oriented organisations having to increase their volume of operations due to their core service already being food and essentials provision to those in need. Changes include requiring more hands on deck, operational adjustments to factor in social distancing rules like only allowing volunteers in the facilities and handing out parcels from the door, ensuring constant supply. 
-- Innovation
-- Innovation here would entail introduction of a new product or process that was otherwise not available in the zonal context prior to the crisis. While it maybe too early, there is evidence of such innovation already being rolled out. Over time, we might see more innovative outcomes from the TSOs especially within the digital frontier.
+- **Adapting** 
+  - This involves organisations adapting themselves by retaining (some) existing programmes especially by shifting those online, but also included additional services tailored to the current crisis needs
+- **Expanding**
+  - Expanding involves community-oriented organisations having to increase their volume of operations due to their core service already being food and essentials provision to those in need. Changes include requiring more hands on deck, operational adjustments to factor in social distancing rules like only allowing volunteers in the facilities and handing out parcels from the door, ensuring constant supply. 
+- **Innovation**
+  - Innovation here would entail introduction of a new product or process that was otherwise not available in the zonal context prior to the crisis. While it maybe too early, there is evidence of such innovation already being rolled out. Over time, we might see more innovative outcomes from the TSOs especially within the digital frontier.
 
 ## What’s happening in-terms of Social Innovation?
 
