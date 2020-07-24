@@ -1,0 +1,40 @@
+
+
+img 
+  display: block
+  max-width: 100%
+
+.wrapper 
+  overflow: hidden
+  height: 80vh
+  display: grid
+  grid-template-columns: 4fr 2fr
+  grid-gap: 36px
+
+.gallery 
+  overflow: hidden
+  overflow-x: hidden
+  scroll-behavior: smooth
+
+.gallery__img 
+  scroll-snap-align: start
+  min-height: 100%
+  object-fit: cover
+
+.lil-nav 
+  overflow-y: scroll
+  overflow-x: hidden  
+  scroll-snap-type: y mandatory
+
+  a 
+    height: 80vh
+    display: flex
+    margin-bottom: 10px
+    margin-top: 10px
+    padding-top: 10px
+  
+
+
+.lil-nav__img 
+  object-fit: cover
+  scroll-snap-align: start

@@ -9,23 +9,23 @@
   <script async="async" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   
   {% set css %}  
-    {% include "assets/css/bulma.css" %}
+    {% include "assets/css/style.css" %}
     {% include "assets/css/prismjs_ateliersulphurpool-light.css" %}
   {% endset %}
 
   {% if config.environment == "production" %}
     <style>
-      {{css | cssmin | safe}}
+      {% include "assets/css/style.css" %}
     </style>
   {% else %}
     <style>
-      {{css | safe}}
+      {% include "assets/css/style.css" %}
     </style>
   {% endif %}
 
   {% set js %}
-  {% include "assets/js/inline.js" %}
-  {% include "static/konami.js" %}
+    {% include "assets/js/inline.js" %}
+    {% include "static/konami.js" %}
   {% endset %}
 
   {% if config.environment == "production" %}

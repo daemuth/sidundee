@@ -1,0 +1,112 @@
+{#  
+
+NOTE TO FUTURE SELF, YOU'RE HIGH ON CAFFEINE NOW
+
+THIS LAYOUT IS INTENDED TO USE WITH EMBEDEDD STORYMAP.JS MAPS
+
+and as such doesn't have any header images or title row because it would just look plain stoopid
+
+I hope I didn't fuck anything else
+
+#}
+
+{% extends 'layouts/base.njk' %}
+{% import "../components/macros/macros.njk" as macros %}
+
+{% block content %}    
+
+<article>
+  <div id="mapdiv" style="width: 100%; height: 800px;"></div>
+
+
+
+
+ 
+  {# Content #}  
+  <section class="section content">
+
+    
+    {% if info_panel == "side" %}
+      <div class="container">      
+          <div class="columns">   
+
+            {# Side info column  #}
+            <div class="column is-full-mobile is-3 post-details">
+              <p>
+                <span class="author">Author: <b>{{ author.name }}</b></span>
+              </p>
+              <p>
+                <span class="posted">Posted: <b><time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time></b></span>
+              </p>
+              <p>
+              {% if tags %}
+                <p class="tags">                
+                      {{ macros.taglist(tags) }}               
+                </p>
+              {% endif %}
+            </div>
+            {# Content column  #}
+            <div class="column is-full-mobile is-7 has-text-justified is-centered line-height">
+                {{ layoutContent | safe }} 
+            </div>
+        </div>
+    {% endif %}
+
+    {% if info_panel == "inline" %}
+      <div class="container">
+        
+        <div class="columns is-centered is-mobile is-multiline">
+          <div class="column is-full-mobile is-7-desktop is-centered">
+            
+            {# Side info column  #}
+            <div class="column is-full">
+              <div class="columns">
+
+                <div class="column">
+                  <span class="author">Author: <b>{{ author.name }}</b></span>
+                </div>
+
+                <div class="column">
+                  <span class="posted">Posted: <b><time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time></b></span>
+                </div>
+
+                {% if tags %}
+                  <div class="column">
+                    <p class="tags">                
+                        {{ macros.taglist(tags) }}       
+                    </p>
+                  </div>
+                {% endif %}  
+
+              </div>
+            </div>
+
+            <div class="column is-full has-text-justified is-centered line-height">
+                  {{ layoutContent | safe }} 
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    </div>
+  </section>
+</article>
+
+
+<!-- Your script tags should be placed before the closing body tag. -->
+<link rel="stylesheet" href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css">
+<script type="text/javascript" src="https://cdn.knightlab.com/libs/storymapjs/latest/js/storymap-min.js"></script>
+
+<script>
+  // storymap_data can be an URL or a Javascript object
+  var storymap_data = '{{ storymap }}';
+
+  // certain settings must be passed within a separate options object
+  var storymap_options = {};
+
+  var storymap = new VCO.StoryMap('mapdiv', storymap_data, storymap_options);
+  window.onresize = function(event) {
+      storymap.updateDisplay(); // this isn't automatic
+  }
+</script>
+{% endblock %}
